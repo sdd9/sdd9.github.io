@@ -2,7 +2,7 @@
 
 Family daycare in Langley, British Columbia. A small group of six children in a home setting, with a rainbow-train theme.
 
-**Website:** https://sdd9.github.io/day-care-express/
+**Live website:** https://sdd9.github.io/
 
 ## Contact
 
@@ -12,6 +12,4 @@ Family daycare in Langley, British Columbia. A small group of six children in a 
 - **Hours:** Monday to Friday, by arrangement with families
 - **Group:** Up to 6 children (2 under 24 months, 4 aged 24 months–5 years)
 
-This repository is the public website (GitHub Pages).
-
-To publish: GitHub → **Settings** → **Pages** → Deploy from branch **main**, folder **/ (root)**.
+Source repository: https://github.com/sdd9/day-care-express
