@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Day Care Express</title>
+    <meta
+      name="description"
+      content="Day Care Express is a family daycare in Langley, BC. A small group of six children in a home setting — unhurried, close, and kind."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #f6f7f9;
+        --fg: #1c2330;
+        --muted: #5b6770;
+        --subtle: #8a949c;
+        --engine: #e85d4c;
+        --engine-hot: #d44b3b;
+        --rail-red: #e85d4c;
+        --rail-orange: #f4a259;
+        --rail-yellow: #f2c14e;
+        --rail-green: #3ddc97;
+        --rail-blue: #4c9be8;
+        --rail-violet: #7b6cf6;
+        --track: #d7dde3;
+        --shadow: 0 0 0 1px rgba(28, 35, 48, 0.06), 0 1px 2px -1px rgba(28, 35, 48, 0.06),
+          0 2px 4px 0 rgba(28, 35, 48, 0.04);
+        --display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+        --sans: "Nunito", "Segoe UI", system-ui, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+      p { text-wrap: pretty; }
+      a { color: inherit; }
+      .rail { display: flex; height: 6px; }
+      .rail span { flex: 1; }
+      .rail-sm { height: 4px; }
+      header {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(255,255,255,.95);
+        backdrop-filter: blur(8px);
+      }
+      .bar {
+        max-width: 1120px; margin: 0 auto; padding: 12px 20px;
+        display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      }
+      .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+      .brand strong { display: block; font-family: var(--display); font-size: 1.15rem; }
+      .brand small { display: none; color: var(--muted); }
+      nav.desktop { display: none; gap: 4px; }
+      nav a {
+        text-decoration: none; color: var(--muted); font-weight: 600;
+        padding: 8px 12px; border-radius: 999px; font-size: .9rem;
+      }
+      nav.mobile {
+        display: flex; gap: 6px; overflow-x: auto; padding: 0 20px 12px;
+      }
+      nav.mobile a { background: var(--surface); white-space: nowrap; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600;
+        text-decoration: none; border: 0; cursor: pointer; font-family: inherit;
+        font-size: .95rem;
+      }
+      .btn-primary { background: var(--engine); color: #fff; }
+      .btn-primary:hover { background: var(--engine-hot); }
+      .btn-outline { background: #fff; color: var(--fg); box-shadow: var(--shadow); }
+      main { max-width: 1120px; margin: 0 auto; padding: 0 20px 64px; }
+      .hero { padding: 36px 0 24px; }
+      .hero-grid { display: grid; gap: 28px; }
+      .hero-photo {
+        overflow: hidden; border-radius: 32px; background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .hero-photo img { display: block; width: 100%; height: auto; }
+      .kicker { color: var(--engine); font-weight: 700; font-size: .9rem; letter-spacing: .02em; }
+      h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.12; max-width: 16ch; margin-top: 10px; }
+      .lede { color: var(--muted); font-size: 1.15rem; max-width: 42ch; line-height: 1.6; margin-top: 16px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+      .track-wrap {
+        margin-top: 36px; background: var(--surface); border-radius: 32px;
+        padding: 24px 8px; overflow: hidden;
+      }
+      .train-chug { animation: chug 18s ease-in-out infinite alternate; }
+      @keyframes chug {
+        from { transform: translateX(-6%); }
+        to { transform: translateX(6%); }
+      }
+      section { padding: 56px 0; scroll-margin-top: 96px; }
+      h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-top: 8px; max-width: 18ch; }
+      .grid-3, .grid-2, .facts { display: grid; gap: 14px; margin-top: 28px; }
+      .card {
+        background: var(--bg); border-radius: 28px; padding: 24px; box-shadow: var(--shadow);
+      }
+      .card h3 { font-size: 1.25rem; margin: 12px 0 8px; }
+      .card p, .muted { color: var(--muted); line-height: 1.55; }
+      .band { background: var(--surface); border-top: 1px solid #eceff2; border-bottom: 1px solid #eceff2; }
+      .band-inner { max-width: 1120px; margin: 0 auto; padding: 56px 20px; }
+      .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .stat { background: #fff; border-radius: 24px; padding: 20px; box-shadow: var(--shadow); }
+      .stat b { font-family: var(--display); font-size: 2.4rem; display: block; }
+      .swatch { display: block; width: 40px; height: 6px; border-radius: 99px; margin-bottom: 14px; }
+      .fact {
+        display: flex; gap: 12px; background: #fff; border-radius: 18px; padding: 14px 16px;
+        box-shadow: var(--shadow); align-items: flex-start;
+      }
+      .contact-box {
+        display: grid; gap: 28px; background: var(--surface); border-radius: 32px; padding: 28px;
+      }
+      address { font-style: normal; margin-top: 24px; line-height: 1.55; }
+      address .row { display: flex; gap: 12px; margin: 0 0 14px; }
+      form { display: grid; gap: 14px; }
+      label { font-size: .9rem; font-weight: 600; display: grid; gap: 6px; }
+      input, textarea {
+        height: 44px; border-radius: 12px; border: 1px solid #e5e8ec; padding: 0 12px;
+        font: inherit; box-shadow: var(--shadow); background: #fff; color: var(--fg);
+      }
+      textarea { height: auto; min-height: 112px; padding: 12px; border-radius: 16px; }
+      .two { display: grid; gap: 14px; }
+      footer { max-width: 1120px; margin: 0 auto; padding: 28px 20px; color: var(--muted); }
+      .ok { display: none; background: var(--surface); border-radius: 18px; padding: 18px; }
+      @media (min-width: 720px) {
+        .brand small { display: block; }
+        nav.desktop { display: flex; }
+        nav.mobile { display: none; }
+        .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+        .band-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
+        .contact-box { grid-template-columns: .9fr 1.1fr; padding: 40px; }
+        .two { grid-template-columns: 1fr 1fr; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .train-chug { animation: none; }
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="rail rail-sm" aria-hidden="true">
+        <span style="background:var(--rail-red)"></span>
+        <span style="background:var(--rail-orange)"></span>
+        <span style="background:var(--rail-yellow)"></span>
+        <span style="background:var(--rail-green)"></span>
+        <span style="background:var(--rail-blue)"></span>
+        <span style="background:var(--rail-violet)"></span>
+      </div>
+      <div class="bar">
+        <a class="brand" href="#top">
+          <svg width="44" height="36" viewBox="0 0 48 40" aria-hidden="true">
+            <rect x="8" y="10" width="28" height="16" rx="4" fill="#E85D4C"/>
+            <rect x="24" y="6" width="14" height="14" rx="3" fill="#D44B3B"/>
+            <rect x="28" y="2" width="5" height="6" rx="1.5" fill="#F4A259"/>
+            <circle cx="31" cy="12.5" r="3.2" fill="#fff"/>
+            <circle cx="31" cy="12.5" r="1.5" fill="#4C9BE8"/>
+            <path d="M8 24 L3 28 H41 L36 24 Z" fill="#F2C14E"/>
+            <circle cx="16" cy="30" r="4.2" fill="#2C3544"/>
+            <circle cx="32" cy="30" r="4.2" fill="#2C3544"/>
+          </svg>
+          <span>
+            <strong>Day Care Express</strong>
+            <small>Family daycare · small group</small>
+          </span>
+        </a>
+        <nav class="desktop" aria-label="Page">
+          <a href="#about">About</a>
+          <a href="#group">Small group</a>
+          <a href="#day">A day here</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-primary" href="#contact">Inquire</a>
+      </div>
+      <nav class="mobile" aria-label="Page (mobile)">
+        <a href="#about">About</a>
+        <a href="#group">Small group</a>
+        <a href="#day">A day here</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">Family daycare in Langley, British Columbia</p>
+            <h1>All aboard for a small, loving group.</h1>
+            <p class="lede">
+              Day Care Express is a home-based family daycare — not a busy centre.
+              Six children. One family setting. Time to notice each child.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#contact">Ask about a space</a>
+              <a class="btn btn-outline" href="#group">See the group</a>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img src="rainbow-train.jpg" width="1600" height="900" alt="A wooden rainbow toy train on a white table" />
+          </div>
+        </div>
+        <div class="track-wrap">
+          <div class="train-chug">
+            <svg viewBox="0 0 720 168" role="img" aria-label="Rainbow train with a red engine and five colourful cars">
+              <line x1="12" y1="142" x2="708" y2="142" stroke="#d7dde3" stroke-width="6" stroke-linecap="round"/>
+              <line x1="28" y1="136" x2="28" y2="152" stroke="#e85d4c" stroke-width="4" stroke-linecap="round"/>
+              <line x1="68" y1="136" x2="68" y2="152" stroke="#f4a259" stroke-width="4" stroke-linecap="round"/>
+              <line x1="108" y1="136" x2="108" y2="152" stroke="#f2c14e" stroke-width="4" stroke-linecap="round"/>
+              <line x1="148" y1="136" x2="148" y2="152" stroke="#3ddc97" stroke-width="4" stroke-linecap="round"/>
+              <line x1="188" y1="136" x2="188" y2="152" stroke="#4c9be8" stroke-width="4" stroke-linecap="round"/>
+              <line x1="228" y1="136" x2="228" y2="152" stroke="#7b6cf6" stroke-width="4" stroke-linecap="round"/>
+              <line x1="268" y1="136" x2="268" y2="152" stroke="#e85d4c" stroke-width="4" stroke-linecap="round"/>
+              <line x1="308" y1="136" x2="308" y2="152" stroke="#f4a259" stroke-width="4" stroke-linecap="round"/>
+              <line x1="348" y1="136" x2="348" y2="152" stroke="#f2c14e" stroke-width="4" stroke-linecap="round"/>
+              <line x1="388" y1="136" x2="388" y2="152" stroke="#3ddc97" stroke-width="4" stroke-linecap="round"/>
+              <line x1="428" y1="136" x2="428" y2="152" stroke="#4c9be8" stroke-width="4" stroke-linecap="round"/>
+              <line x1="468" y1="136" x2="468" y2="152" stroke="#7b6cf6" stroke-width="4" stroke-linecap="round"/>
+              <line x1="508" y1="136" x2="508" y2="152" stroke="#e85d4c" stroke-width="4" stroke-linecap="round"/>
+              <line x1="548" y1="136" x2="548" y2="152" stroke="#f4a259" stroke-width="4" stroke-linecap="round"/>
+              <line x1="588" y1="136" x2="588" y2="152" stroke="#f2c14e" stroke-width="4" stroke-linecap="round"/>
+              <line x1="628" y1="136" x2="628" y2="152" stroke="#3ddc97" stroke-width="4" stroke-linecap="round"/>
+              <line x1="668" y1="136" x2="668" y2="152" stroke="#4c9be8" stroke-width="4" stroke-linecap="round"/>
+              <ellipse cx="92" cy="14" rx="10" ry="6" fill="#d7dde3" opacity=".7"/>
+              <ellipse cx="108" cy="6" rx="14" ry="8" fill="#d7dde3" opacity=".45"/>
+              <path d="M28 108 L12 124 H118 L102 108 Z" fill="#F2C14E"/>
+              <rect x="32" y="48" width="92" height="62" rx="14" fill="#E85D4C"/>
+              <rect x="78" y="28" width="52" height="52" rx="12" fill="#D44B3B"/>
+              <rect x="96" y="10" width="16" height="22" rx="5" fill="#F4A259"/>
+              <circle cx="104" cy="8" r="6" fill="#F2C14E"/>
+              <circle cx="104" cy="52" r="12" fill="#fff"/>
+              <circle cx="104" cy="52" r="6" fill="#4C9BE8"/>
+              <circle cx="52" cy="122" r="11" fill="#2C3544"/><circle cx="100" cy="122" r="11" fill="#2C3544"/>
+              <rect x="132" y="82" width="14" height="6" rx="2" fill="#2C3544"/>
+              <rect x="142" y="52" width="92" height="58" rx="14" fill="#F4A259"/>
+              <circle cx="172" cy="78" r="10" fill="#fff"/><circle cx="204" cy="78" r="10" fill="#fff"/>
+              <circle cx="168" cy="122" r="11" fill="#2C3544"/><circle cx="208" cy="122" r="11" fill="#2C3544"/>
+              <rect x="240" y="82" width="14" height="6" rx="2" fill="#2C3544"/>
+              <rect x="250" y="52" width="92" height="58" rx="14" fill="#F2C14E"/>
+              <circle cx="280" cy="78" r="10" fill="#fff"/><circle cx="312" cy="78" r="10" fill="#fff"/>
+              <circle cx="276" cy="122" r="11" fill="#2C3544"/><circle cx="316" cy="122" r="11" fill="#2C3544"/>
+              <rect x="348" y="82" width="14" height="6" rx="2" fill="#2C3544"/>
+              <rect x="358" y="52" width="92" height="58" rx="14" fill="#3DDC97"/>
+              <circle cx="388" cy="78" r="10" fill="#fff"/><circle cx="420" cy="78" r="10" fill="#fff"/>
+              <circle cx="384" cy="122" r="11" fill="#2C3544"/><circle cx="424" cy="122" r="11" fill="#2C3544"/>
+              <rect x="456" y="82" width="14" height="6" rx="2" fill="#2C3544"/>
+              <rect x="466" y="52" width="92" height="58" rx="14" fill="#4C9BE8"/>
+              <circle cx="496" cy="78" r="10" fill="#fff"/><circle cx="528" cy="78" r="10" fill="#fff"/>
+              <circle cx="492" cy="122" r="11" fill="#2C3544"/><circle cx="532" cy="122" r="11" fill="#2C3544"/>
+              <rect x="564" y="82" width="14" height="6" rx="2" fill="#2C3544"/>
+              <rect x="574" y="52" width="92" height="58" rx="14" fill="#7B6CF6"/>
+              <circle cx="604" cy="78" r="10" fill="#fff"/><circle cx="636" cy="78" r="10" fill="#fff"/>
+              <circle cx="600" cy="122" r="11" fill="#2C3544"/><circle cx="640" cy="122" r="11" fill="#2C3544"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <p class="kicker">About</p>
+        <h2>A family daycare, on purpose.</h2>
+        <p class="lede">
+          Care happens in a real home in Willoughby, Township of Langley.
+          Mornings are unhurried. Play is the work of the day. Parents know
+          who is looking after their child — the same familiar faces, every day.
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Home, not a hallway</h3>
+            <p>One household, one rhythm. Children settle faster when the room already feels like a home.</p>
+          </article>
+          <article class="card">
+            <h3>Known by name</h3>
+            <p>A small group means we can follow a child’s pace — extra cuddles, extra time at the puzzle, extra outdoor air.</p>
+          </article>
+          <article class="card">
+            <h3>Mixed ages, gently</h3>
+            <p>Infants and preschoolers share the day the way siblings do — younger ones watch, older ones help, everyone belongs.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="band" id="group">
+      <div class="band-inner">
+        <div>
+          <p class="kicker">Small group</p>
+          <h2>Six children. That’s the whole train.</h2>
+          <p class="lede">We keep the group small on purpose — so play stays calm, meals stay sociable, and no one disappears into a crowd.</p>
+          <div class="facts">
+            <div class="fact"><div><strong>Group size</strong><div class="muted">Up to 6 children</div></div></div>
+            <div class="fact"><div><strong>Infants</strong><div class="muted">Up to 2 children under 24 months</div></div></div>
+            <div class="fact"><div><strong>Toddlers & preschool</strong><div class="muted">4 children, 24 months to 5 years</div></div></div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="swatch" style="background:var(--rail-red)"></span><b>6</b><span class="muted">Children</span></div>
+          <div class="stat"><span class="swatch" style="background:var(--rail-orange)"></span><b>2</b><span class="muted">Under 24 months</span></div>
+          <div class="stat"><span class="swatch" style="background:var(--rail-green)"></span><b>4</b><span class="muted">Ages 2–5</span></div>
+          <div class="stat"><span class="swatch" style="background:var(--rail-blue)"></span><b>Home</b><span class="muted">Setting</span></div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="day">
+        <p class="kicker">A day here</p>
+        <h2>Simple days, on a gentle track.</h2>
+        <div class="grid-2">
+          <article class="card"><h3>Welcome</h3><p>A slow start, a familiar hello, and time to settle before the day opens up.</p></article>
+          <article class="card"><h3>Play & stories</h3><p>Open-ended toys, songs, and picture books. The rainbow train is never far from the rug.</p></article>
+          <article class="card"><h3>Outdoor air</h3><p>Yard time and neighbourhood walks to the park when the weather and air quality allow.</p></article>
+          <article class="card"><h3>Rest & snack</h3><p>Parents pack meals. We offer a snack if a child needs one. Quiet rest after a full morning.</p></article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-box">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2>Come see the train.</h2>
+            <p class="lede">Spaces are limited because the group is small. Tell us a little about your child and we’ll be in touch.</p>
+            <address>
+              <p class="row">
+                <span>
+                  <strong>Day Care Express</strong><br />
+                  <span class="muted">Family daycare · small group of 6</span>
+                </span>
+              </p>
+              <p class="row">
+                <span>
+                  19886 70 Avenue<br />
+                  Langley, British Columbia<br />
+                  <span class="muted">Willoughby, Township of Langley</span>
+                </span>
+              </p>
+              <p class="row">Monday to Friday, by arrangement with families</p>
+            </address>
+            <p style="margin-top:20px">
+              <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=19886%2070%20Avenue%2C%20Langley%2C%20British%20Columbia" target="_blank" rel="noreferrer">Open in maps</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Inquire about a space</h3>
+            <p class="muted">Your note is copied so you can send it to us. We’ll follow up about a visit.</p>
+            <form id="inquiry" style="margin-top:18px">
+              <div class="two">
+                <label>Your name <input name="name" required autocomplete="name" /></label>
+                <label>Email <input name="email" type="email" required autocomplete="email" /></label>
+              </div>
+              <div class="two">
+                <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel" /></label>
+                <label>Child’s age <input name="childAge" required placeholder="e.g. 14 months" /></label>
+              </div>
+              <label>Preferred start (optional) <input name="start" placeholder="e.g. September 2026" /></label>
+              <label>A little about your family (optional) <textarea name="message" rows="4"></textarea></label>
+              <button class="btn btn-primary" type="submit">Copy inquiry</button>
+            </form>
+            <div class="ok" id="ok">
+              <strong>Inquiry copied.</strong>
+              <p class="muted">A note is on your clipboard. Email or text it to us, or bring it when you visit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="rail" aria-hidden="true">
+      <span style="background:var(--rail-red)"></span>
+      <span style="background:var(--rail-orange)"></span>
+      <span style="background:var(--rail-yellow)"></span>
+      <span style="background:var(--rail-green)"></span>
+      <span style="background:var(--rail-blue)"></span>
+      <span style="background:var(--rail-violet)"></span>
+    </div>
+    <footer>
+      <strong style="color:var(--fg);font-family:var(--display)">Day Care Express</strong>
+      · Family daycare · small group · Langley, BC
+    </footer>
+    <script>
+      document.getElementById("inquiry").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const text = [
+          "Inquiry for Day Care Express",
+          "",
+          "Parent / guardian: " + data.get("name"),
+          "Email: " + data.get("email"),
+          "Phone: " + (data.get("phone") || "—"),
+          "Child's age: " + data.get("childAge"),
+          "Preferred start: " + (data.get("start") || "—"),
+          "",
+          data.get("message") || "(no extra note)",
+          "",
+          "19886 70 Avenue, Langley, British Columbia",
+        ].join("\n");
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (e) {
+          const blob = new Blob([text], { type: "text/plain" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "daycare-express-inquiry.txt";
+          link.click();
+          URL.revokeObjectURL(url);
+        }
+        event.target.style.display = "none";
+        document.getElementById("ok").style.display = "block";
+      });
+    </script>
+  </body>
+</html>
