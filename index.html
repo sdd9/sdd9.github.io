@@ -144,7 +144,9 @@
       .fees td strong { font-family: var(--display); font-size: 1.6rem; }
       .photo { overflow: hidden; border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
       .photo img { display: block; width: 100%; height: auto; }
-      .photo-lg { max-width: 48rem; margin: 28px auto 0; }
+      .title-row { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
+      .title-row img { width: 112px; height: 112px; object-fit: contain; }
+      .brand img { width: 48px; height: 48px; object-fit: contain; }
       .about-wrap { background: var(--surface); border-radius: 36px; padding: 28px; }
       .about-card { overflow: hidden; border-radius: 28px; box-shadow: var(--shadow); }
       .about-card .bar { display: block; height: 8px; }
@@ -185,16 +187,7 @@
       </div>
       <div class="bar">
         <a class="brand" href="#top">
-          <svg width="44" height="36" viewBox="0 0 48 40" aria-hidden="true">
-            <rect x="8" y="10" width="28" height="16" rx="4" fill="#E85D4C"/>
-            <rect x="24" y="6" width="14" height="14" rx="3" fill="#D44B3B"/>
-            <rect x="28" y="2" width="5" height="6" rx="1.5" fill="#F4A259"/>
-            <circle cx="31" cy="12.5" r="3.2" fill="#fff"/>
-            <circle cx="31" cy="12.5" r="1.5" fill="#4C9BE8"/>
-            <path d="M8 24 L3 28 H41 L36 24 Z" fill="#F2C14E"/>
-            <circle cx="16" cy="30" r="4.2" fill="#2C3544"/>
-            <circle cx="32" cy="30" r="4.2" fill="#2C3544"/>
-          </svg>
+          <img src="toy-train.jpg" width="80" height="80" alt="" />
           <span>
             <strong>Day Care Express</strong>
             <small>Licensed family child care · small group</small>
@@ -219,7 +212,10 @@
     <main id="top">
       <section class="hero">
         <p class="kicker">Licensed family child care in Langley, British Columbia</p>
-        <h1>Day Care Express</h1>
+        <div class="title-row">
+          <img src="toy-train.jpg" width="280" height="280" alt="Colourful toy steam train" />
+          <h1>Day Care Express</h1>
+        </div>
         <p class="lede">A small group of seven children in a home setting — not a busy centre.</p>
         <div class="actions">
           <span class="pill" style="margin-top:0">Now accepting new enrollments</span>
