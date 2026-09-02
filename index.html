@@ -64,15 +64,20 @@
       .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
       .brand strong { display: block; font-family: var(--display); font-size: 1.15rem; }
       .brand small { display: none; color: var(--muted); }
-      nav.desktop { display: none; gap: 4px; }
       nav a {
-        text-decoration: none; color: var(--muted); font-weight: 600;
-        padding: 8px 12px; border-radius: 999px; font-size: .9rem;
+        text-decoration: none; font-weight: 700;
+        padding: 10px 16px; border-radius: 999px; font-size: .9rem;
+        min-height: 44px; display: inline-flex; align-items: center;
       }
+      nav.desktop { display: none; gap: 8px; }
       nav.mobile {
-        display: flex; gap: 6px; overflow-x: auto; padding: 0 20px 12px;
+        display: flex; gap: 8px; overflow-x: auto; padding: 0 20px 12px;
       }
-      nav.mobile a { background: var(--surface); white-space: nowrap; }
+      nav.mobile a { white-space: nowrap; }
+      .tab-red { background: var(--rail-red); color: #fff; }
+      .tab-yellow { background: var(--rail-yellow); color: var(--fg); }
+      .tab-green { background: var(--rail-green); color: var(--fg); }
+      .tab-blue { background: var(--rail-blue); color: #fff; }
       .btn {
         display: inline-flex; align-items: center; justify-content: center;
         height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600;
@@ -195,18 +200,18 @@
           </span>
         </a>
         <nav class="desktop" aria-label="Page">
-          <a href="#about">About</a>
-          <a href="#included">Included</a>
-          <a href="#fees">Fees</a>
-          <a href="#contact">Contact</a>
+          <a class="tab-red" href="#about">About</a>
+          <a class="tab-yellow" href="#included">Included</a>
+          <a class="tab-green" href="#fees">Fees</a>
+          <a class="tab-blue" href="#contact">Contact</a>
         </nav>
         <a class="btn btn-primary" href="#contact">Inquire</a>
       </div>
       <nav class="mobile" aria-label="Page (mobile)">
-        <a href="#about">About</a>
-        <a href="#included">Included</a>
-        <a href="#fees">Fees</a>
-        <a href="#contact">Contact</a>
+        <a class="tab-red" href="#about">About</a>
+        <a class="tab-yellow" href="#included">Included</a>
+        <a class="tab-green" href="#fees">Fees</a>
+        <a class="tab-blue" href="#contact">Contact</a>
       </nav>
     </header>
 
