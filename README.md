@@ -1,15 +1,14 @@
 # Day Care Express
 
-Family daycare in Langley, British Columbia. A small group of six children in a home setting, with a rainbow-train theme.
+Licensed family child care in Langley, British Columbia. A small group of six children in a home setting.
 
 **Website:** https://daycareexpress.ca
 
 ## Contact
 
-- **Day Care Express** — family daycare, small group of 6
+- **Day Care Express** — licensed family child care, small group of 6
 - **Address:** 19886 70 Avenue, Langley, British Columbia
 - **Neighbourhood:** Willoughby, Township of Langley
-- **Hours:** Monday to Friday, by arrangement with families
+- **Hours:** Monday to Friday, with flexible hours for working families
 - **Group:** Up to 6 children (2 under 24 months, 4 aged 24 months–5 years)
-
-Custom domain: `daycareexpress.ca` (GitHub Pages).
+- **CCFRI parent fees (over 4 hours):** $581 / $537 / $500 per month by age

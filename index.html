@@ -6,7 +6,7 @@
     <title>Day Care Express</title>
     <meta
       name="description"
-      content="Day Care Express is a family daycare in Langley, BC. A small group of six children in a home setting — unhurried, close, and kind."
+      content="Day Care Express is a licensed family child care in Langley, BC. Small-group care, CCFRI parent fees, and a home setting — where little ones grow and thrive."
     />
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -134,7 +134,15 @@
       }
       textarea { height: auto; min-height: 112px; padding: 12px; border-radius: 16px; }
       .two { display: grid; gap: 14px; }
-      footer { max-width: 1120px; margin: 0 auto; padding: 28px 20px; color: var(--muted); }
+      .list { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 12px; }
+      .list li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+      .tick { color: var(--rail-green); font-weight: 800; }
+      .bag { color: var(--rail-orange); font-weight: 800; }
+      .fees { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); }
+      .fees th, .fees td { text-align: left; padding: 18px 28px; border-bottom: 1px solid #eceff2; }
+      .fees th { color: var(--muted); font-size: .9rem; }
+      .fees td strong { font-family: var(--display); font-size: 1.6rem; }
+      .pill { display: inline-flex; margin-top: 12px; background: var(--surface); color: var(--engine); font-weight: 700; font-size: .9rem; padding: 6px 12px; border-radius: 999px; }
       .ok { display: none; background: var(--surface); border-radius: 18px; padding: 18px; }
       @media (min-width: 720px) {
         .brand small { display: block; }
@@ -177,21 +185,21 @@
           </svg>
           <span>
             <strong>Day Care Express</strong>
-            <small>Family daycare · small group</small>
+            <small>Licensed family child care · small group</small>
           </span>
         </a>
         <nav class="desktop" aria-label="Page">
           <a href="#about">About</a>
-          <a href="#group">Small group</a>
-          <a href="#day">A day here</a>
+          <a href="#included">Included</a>
+          <a href="#fees">Fees</a>
           <a href="#contact">Contact</a>
         </nav>
         <a class="btn btn-primary" href="#contact">Inquire</a>
       </div>
       <nav class="mobile" aria-label="Page (mobile)">
         <a href="#about">About</a>
-        <a href="#group">Small group</a>
-        <a href="#day">A day here</a>
+        <a href="#included">Included</a>
+        <a href="#fees">Fees</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -200,19 +208,21 @@
       <section class="hero">
         <div class="hero-grid">
           <div>
-            <p class="kicker">Family daycare in Langley, British Columbia</p>
-            <h1>All aboard for a small, loving group.</h1>
+            <p class="kicker">Licensed family child care in Langley, British Columbia</p>
+            <h1>Where Little Ones Grow & Thrive</h1>
             <p class="lede">
-              Day Care Express is a home-based family daycare — not a busy centre.
-              Six children. One family setting. Time to notice each child.
+              Day Care Express is a licensed family child care dedicated to providing
+              high-quality care in a nurturing home-like environment. A small group of
+              six children — not a busy centre.
             </p>
+            <p class="pill">Now accepting new enrollments</p>
             <div class="actions">
               <a class="btn btn-primary" href="#contact">Ask about a space</a>
-              <a class="btn btn-outline" href="#group">See the group</a>
+              <a class="btn btn-outline" href="#fees">See parent fees</a>
             </div>
           </div>
           <div class="hero-photo">
-            <img src="rainbow-train.jpg" width="1600" height="900" alt="A wooden rainbow toy train on a white table" />
+            <img src="hero-playroom.jpg" width="1600" height="1067" alt="Day Care Express illustration: children playing with a rainbow wooden train, blocks, books, and toys in a sunny playroom" />
           </div>
         </div>
         <div class="track-wrap">
@@ -271,6 +281,21 @@
         </div>
       </section>
 
+      </section>
+
+      <section>
+        <p class="kicker">Why parents choose us</p>
+        <h2>A warm, safe, and loving place for your little one.</h2>
+        <p class="lede">We believe every child deserves to feel happy, secure, and excited to learn and grow every day.</p>
+        <div class="grid-3">
+          <article class="card"><h3>Licensed & inspected</h3><p>Fully licensed and inspected for your peace of mind.</p></article>
+          <article class="card"><h3>Small group</h3><p>Small group sizes so every child gets personal attention.</p></article>
+          <article class="card"><h3>Play & learning</h3><p>Age-appropriate learning, play, and social activities.</p></article>
+          <article class="card"><h3>A real home</h3><p>Safe, clean, and stimulating space filled with love.</p></article>
+          <article class="card"><h3>Flexible hours</h3><p>Flexible hours to support working families.</p></article>
+        </div>
+      </section>
+
       <section id="about">
         <p class="kicker">About</p>
         <h2>A family daycare, on purpose.</h2>
@@ -325,21 +350,69 @@
           <article class="card"><h3>Welcome</h3><p>A slow start, a familiar hello, and time to settle before the day opens up.</p></article>
           <article class="card"><h3>Play & stories</h3><p>Open-ended toys, songs, and picture books. The rainbow train is never far from the rug.</p></article>
           <article class="card"><h3>Outdoor air</h3><p>Yard time and neighbourhood walks to the park when the weather and air quality allow.</p></article>
-          <article class="card"><h3>Rest & snack</h3><p>Parents pack meals. We offer a snack if a child needs one. Quiet rest after a full morning.</p></article>
+          <article class="card"><h3>Rest & snack</h3><p>Parents pack lunch and main meals. We offer morning and afternoon snacks if food has not been sent.</p></article>
         </div>
+      </section>
+
+      </section>
+
+      <section id="included">
+        <p class="kicker">What’s included</p>
+        <h2>Clear from the start.</h2>
+        <p class="lede">Safe. Loved. Learning. Growing. All aboard for a great day.</p>
+        <div class="grid-2">
+          <article class="card">
+            <h3>In the monthly fee</h3>
+            <ul class="list">
+              <li><span class="tick">✓</span> Full-day licensed family child care</li>
+              <li><span class="tick">✓</span> Morning and afternoon snacks (if a parent has not sent food)</li>
+              <li><span class="tick">✓</span> Age-appropriate toys, books, art materials and learning resources</li>
+              <li><span class="tick">✓</span> Daily indoor and outdoor play, circle time, stories, music, movement and hands-on activities</li>
+              <li><span class="tick">✓</span> Supervised rest / nap time</li>
+              <li><span class="tick">✓</span> Positive guidance, emotional support and individualized attention</li>
+              <li><span class="tick">✓</span> Basic toileting and hygiene support</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>What parents provide</h3>
+            <ul class="list">
+              <li><span class="bag">•</span> Lunch and main meals</li>
+              <li><span class="bag">•</span> Diapers, wipes and cream</li>
+              <li><span class="bag">•</span> Formula, bottles or specialized infant food</li>
+              <li><span class="bag">•</span> Change of clothes, outdoor weather gear, sunscreen and hat</li>
+              <li><span class="bag">•</span> Any special dietary requirements</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="fees">
+        <p class="kicker">Parent fees</p>
+        <h2>CCFRI fees after the automatic reduction.</h2>
+        <p class="lede">CCFRI parent fees — over 4 hours · Langley, BC. Automatic CCFRI reduction. Families do not apply.</p>
+        <table class="fees">
+          <thead>
+            <tr><th>Age group</th><th>Parent fee after CCFRI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0–18 months</td><td><strong>$581</strong> / month</td></tr>
+            <tr><td>18–36 months</td><td><strong>$537</strong> / month</td></tr>
+            <tr><td>3 years to Kindergarten</td><td><strong>$500</strong> / month</td></tr>
+          </tbody>
+        </table>
       </section>
 
       <section id="contact">
         <div class="contact-box">
           <div>
             <p class="kicker">Contact</p>
-            <h2>Come see the train.</h2>
-            <p class="lede">Spaces are limited because the group is small. Tell us a little about your child and we’ll be in touch.</p>
+            <h2>Message us about a tour.</h2>
+            <p class="lede">Now accepting new enrollments. Spaces are limited because the group is small — tell us a little about your child and we’ll follow up.</p>
             <address>
               <p class="row">
                 <span>
                   <strong>Day Care Express</strong><br />
-                  <span class="muted">Family daycare · small group of 6</span>
+                  <span class="muted">Licensed family child care · small group of 6</span>
                 </span>
               </p>
               <p class="row">
@@ -349,7 +422,7 @@
                   <span class="muted">Willoughby, Township of Langley</span>
                 </span>
               </p>
-              <p class="row">Monday to Friday, by arrangement with families</p>
+              <p class="row">Monday to Friday, with flexible hours for working families</p>
             </address>
             <p style="margin-top:20px">
               <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=19886%2070%20Avenue%2C%20Langley%2C%20British%20Columbia" target="_blank" rel="noreferrer">Open in maps</a>
@@ -390,7 +463,7 @@
     </div>
     <footer>
       <strong style="color:var(--fg);font-family:var(--display)">Day Care Express</strong>
-      · Family daycare · small group · Langley, BC
+      · Where Little Ones Grow & Thrive · licensed family child care · Langley, BC
     </footer>
     <script>
       document.getElementById("inquiry").addEventListener("submit", async (event) => {
