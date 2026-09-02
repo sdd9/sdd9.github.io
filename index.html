@@ -129,7 +129,7 @@
       .contact-box {
         display: grid; gap: 28px; background: var(--surface); border-radius: 32px; padding: 28px;
       }
-      address { font-style: normal; margin-top: 24px; line-height: 1.55; }
+      address a { color: var(--engine); font-weight: 700; text-decoration: none; }
       address .row { display: flex; gap: 12px; margin: 0 0 14px; }
       form { display: grid; gap: 14px; }
       label { font-size: .9rem; font-weight: 600; display: grid; gap: 6px; }
@@ -404,6 +404,11 @@
                   <span class="muted">Township of Langley</span>
                 </span>
               </p>
+              <p class="row">
+                <span>
+                  <a href="mailto:Daycareexpressbc@hotmail.com">Daycareexpressbc@hotmail.com</a>
+                </span>
+              </p>
               <p class="row">Monday to Friday, with flexible hours for working families</p>
             </address>
             <p style="margin-top:20px">
@@ -412,7 +417,7 @@
           </div>
           <div class="card">
             <h3>Inquire about a space</h3>
-            <p class="muted">Your note is copied so you can send it to us. We’ll follow up about a visit.</p>
+            <p class="muted">Your note is copied so you can email it to Daycareexpressbc@hotmail.com. We’ll follow up about a visit.</p>
             <form id="inquiry" style="margin-top:18px">
               <div class="two">
                 <label>Your name <input name="name" required autocomplete="name" /></label>
@@ -446,6 +451,7 @@
     <footer>
       <strong style="color:var(--fg);font-family:var(--display)">Day Care Express</strong>
       · Where Little Ones Grow & Thrive · licensed family child care · Langley, BC
+      · <a href="mailto:Daycareexpressbc@hotmail.com">Daycareexpressbc@hotmail.com</a>
     </footer>
     <script>
       document.getElementById("inquiry").addEventListener("submit", async (event) => {
