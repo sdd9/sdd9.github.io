@@ -144,7 +144,7 @@
       .fees td strong { font-family: var(--display); font-size: 1.6rem; }
       .photo { overflow: hidden; border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
       .photo img { display: block; width: 100%; height: auto; }
-      .split { display: grid; gap: 28px; align-items: start; margin-top: 28px; }
+      .photo-lg { max-width: 48rem; margin: 28px auto 0; }
       .about-wrap { background: var(--surface); border-radius: 36px; padding: 28px; }
       .about-card { overflow: hidden; border-radius: 28px; box-shadow: var(--shadow); }
       .about-card .bar { display: block; height: 8px; }
@@ -218,24 +218,16 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-grid">
-          <div>
-            <p class="kicker">Licensed family child care in Langley, British Columbia</p>
-            <h1>Where Little Ones Grow & Thrive</h1>
-            <p class="lede">
-              Day Care Express is a licensed family child care dedicated to providing
-              high-quality care in a nurturing home-like environment. A small group of
-              seven children — not a busy centre.
-            </p>
-            <p class="pill">Now accepting new enrollments</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="#contact">Ask about a space</a>
-              <a class="btn btn-outline" href="#fees">See parent fees</a>
-            </div>
-          </div>
-          <div class="hero-photo">
-            <img src="hero-playroom.jpg" width="1600" height="1067" alt="Day Care Express illustration: children playing with a rainbow wooden train, blocks, books, and toys in a sunny playroom" />
-          </div>
+        <p class="kicker">Licensed family child care in Langley, British Columbia</p>
+        <h1>Day Care Express</h1>
+        <p class="lede">A small group of seven children in a home setting — not a busy centre.</p>
+        <div class="actions">
+          <span class="pill" style="margin-top:0">Now accepting new enrollments</span>
+          <a class="btn btn-primary" href="#contact">Ask about a space</a>
+          <a class="btn btn-outline" href="#fees">See parent fees</a>
+        </div>
+        <div class="hero-photo" style="margin-top:28px">
+          <img src="hero-playroom.jpg" width="1500" height="1000" alt="Day Care Express: Where Little Ones Grow and Thrive. Children playing with a rainbow wooden train, blocks, books, and toys." />
         </div>
         <div class="track-wrap">
           <div class="train-chug">
@@ -294,21 +286,10 @@
       </section>
 
       <section>
-        <p class="kicker">Why parents choose us</p>
-        <h2>A warm, safe, and loving place for your little one.</h2>
-        <p class="lede">We believe every child deserves to feel happy, secure, and excited to learn and grow every day.</p>
-        <div class="split">
-          <figure class="photo">
-            <img src="flyer-welcome.jpg" width="1500" height="2235" alt="Day Care Express flyer: licensed family child care, now accepting new enrollments" />
-          </figure>
-          <div class="grid-2">
-            <article class="card"><h3>Licensed & inspected</h3><p>Fully licensed and inspected for your peace of mind.</p></article>
-            <article class="card"><h3>Small group</h3><p>Small group sizes so every child gets personal attention.</p></article>
-            <article class="card"><h3>Play & learning</h3><p>Age-appropriate learning, play, and social activities.</p></article>
-            <article class="card"><h3>A real home</h3><p>Safe, clean, and stimulating space filled with love.</p></article>
-            <article class="card"><h3>Flexible hours</h3><p>Flexible hours to support working families.</p></article>
-          </div>
-        </div>
+        <h2>Welcome</h2>
+        <figure class="photo photo-lg">
+          <img src="flyer-welcome.jpg" width="1500" height="2235" alt="Day Care Express flyer: licensed family child care, why parents choose us, now accepting new enrollments" />
+        </figure>
       </section>
 
       <section id="about">
@@ -387,56 +368,18 @@
       <section id="included">
         <p class="kicker">What’s included</p>
         <h2>Clear from the start.</h2>
-        <p class="lede">Safe. Loved. Learning. Growing. All aboard for a great day.</p>
-        <div class="split">
-          <figure class="photo">
-            <img src="flyer-included.jpg" width="1500" height="2230" alt="Day Care Express flyer showing what is included in the monthly fee and what parents provide" />
-          </figure>
-          <div class="grid-2">
-          <article class="card">
-            <h3>In the monthly fee</h3>
-            <ul class="list">
-              <li><span class="tick">✓</span> Full-day licensed family child care</li>
-              <li><span class="tick">✓</span> Age-appropriate toys, books, art materials and learning resources</li>
-              <li><span class="tick">✓</span> Daily indoor and outdoor play, circle time, stories, music, movement and hands-on activities</li>
-              <li><span class="tick">✓</span> Supervised rest / nap time</li>
-              <li><span class="tick">✓</span> Positive guidance, emotional support and individualized attention</li>
-              <li><span class="tick">✓</span> Basic toileting and hygiene support</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>What parents provide</h3>
-            <ul class="list">
-              <li><span class="bag">•</span> Lunch, main meals, and snacks</li>
-              <li><span class="bag">•</span> Diapers, wipes and cream</li>
-              <li><span class="bag">•</span> Formula, bottles or specialized infant food</li>
-              <li><span class="bag">•</span> Change of clothes, outdoor weather gear, sunscreen and hat</li>
-              <li><span class="bag">•</span> Any special dietary requirements</li>
-            </ul>
-          </article>
-          </div>
-        </div>
+        <figure class="photo photo-lg">
+          <img src="flyer-included.jpg" width="1500" height="2230" alt="Day Care Express flyer showing what is included in the monthly fee and what parents provide" />
+        </figure>
+        <p class="lede" style="text-align:center;max-width:40rem;margin:20px auto 0">Parents provide lunch, main meals, and snacks.</p>
       </section>
 
       <section id="fees">
         <p class="kicker">Parent fees</p>
-        <h2>CCFRI fees after the automatic reduction.</h2>
-        <p class="lede">CCFRI parent fees — over 4 hours · Langley, BC. Automatic CCFRI reduction. Families do not apply.</p>
-        <div class="split">
-          <figure class="photo">
-            <img src="flyer-fees.jpg" width="1500" height="2230" alt="Day Care Express CCFRI parent fees: $581, $537, and $500 a month by age group" />
-          </figure>
-          <table class="fees">
-            <thead>
-              <tr><th>Age group</th><th>Parent fee after CCFRI</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>0–18 months</td><td><strong>$581</strong> / month</td></tr>
-              <tr><td>18–36 months</td><td><strong>$537</strong> / month</td></tr>
-              <tr><td>3 years to Kindergarten</td><td><strong>$500</strong> / month</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <h2>CCFRI parent fees</h2>
+        <figure class="photo photo-lg">
+          <img src="flyer-fees.jpg" width="1500" height="2230" alt="Day Care Express CCFRI parent fees: $581, $537, and $500 a month by age group. Automatic CCFRI reduction. Families do not apply." />
+        </figure>
       </section>
 
       <section id="contact">
