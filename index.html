@@ -205,7 +205,7 @@
           <a class="tab-green" href="#fees">Fees</a>
           <a class="tab-blue" href="#contact">Contact</a>
         </nav>
-        <a class="btn btn-primary" href="#contact">Inquire</a>
+        <a class="btn btn-primary" href="mailto:Daycareexpressbc@hotmail.com">Email us</a>
       </div>
       <nav class="mobile" aria-label="Page (mobile)">
         <a class="tab-red" href="#about">About</a>
@@ -225,7 +225,7 @@
         <p class="lede">A small group of seven children in a home setting — not a busy centre.</p>
         <div class="actions">
           <span class="pill" style="margin-top:0">Now accepting new enrollments</span>
-          <a class="btn btn-primary" href="#contact">Ask about a space</a>
+          <a class="btn btn-primary" href="mailto:Daycareexpressbc@hotmail.com">Email us</a>
           <a class="btn btn-outline" href="#fees">See parent fees</a>
         </div>
         <div class="hero-photo" style="margin-top:28px">
@@ -389,7 +389,7 @@
           <div>
             <p class="kicker">Contact</p>
             <h2>Message us about a tour.</h2>
-            <p class="lede">Now accepting new enrollments. Spaces are limited because the group is small — tell us a little about your child and we’ll follow up.</p>
+            <p class="lede">Now accepting new enrollments. Spaces are limited because the group is small — email us and we’ll follow up.</p>
             <address>
               <p class="row">
                 <span>
@@ -411,31 +411,10 @@
               </p>
               <p class="row">Monday to Friday, with flexible hours for working families</p>
             </address>
-            <p style="margin-top:20px">
+            <p style="margin-top:20px" class="actions">
+              <a class="btn btn-primary" href="mailto:Daycareexpressbc@hotmail.com">Email us</a>
               <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=19886%2070%20Avenue%2C%20Langley%2C%20British%20Columbia" target="_blank" rel="noreferrer">Open in maps</a>
             </p>
-          </div>
-          <div class="card">
-            <h3>Inquire about a space</h3>
-            <p class="muted">Fill in the form and tap Send inquiry. Your email app will open a message to Daycareexpressbc@hotmail.com — tap Send and we’ll get it.</p>
-            <form id="inquiry" style="margin-top:18px">
-              <div class="two">
-                <label>Your name <input name="name" required autocomplete="name" /></label>
-                <label>Email <input name="email" type="email" required autocomplete="email" /></label>
-              </div>
-              <div class="two">
-                <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel" /></label>
-                <label>Child’s age <input name="child_age" required placeholder="e.g. 14 months" /></label>
-              </div>
-              <label>Preferred start (optional) <input name="preferred_start" placeholder="e.g. September 2026" /></label>
-              <label>A little about your family (optional) <textarea name="message" rows="4"></textarea></label>
-              <button class="btn btn-primary" type="submit" id="send-btn">Send inquiry</button>
-            </form>
-            <div class="ok" id="ok">
-              <strong>Ready to send</strong>
-              <p class="muted">Your email app should open with a message to Daycareexpressbc@hotmail.com. Tap Send and we’ll receive it.</p>
-              <p style="margin-top:14px"><a class="btn btn-primary" id="open-mail" href="mailto:Daycareexpressbc@hotmail.com">Open email app</a></p>
-            </div>
           </div>
         </div>
       </section>
@@ -454,33 +433,5 @@
       · Where Little Ones Grow & Thrive · licensed family child care · Langley, BC
       · <a href="mailto:Daycareexpressbc@hotmail.com">Daycareexpressbc@hotmail.com</a>
     </footer>
-    <script>
-      document.getElementById("inquiry").addEventListener("submit", (event) => {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        const body = [
-          "Inquiry for Day Care Express",
-          "",
-          "Parent / guardian: " + data.get("name"),
-          "Email: " + data.get("email"),
-          "Phone: " + (data.get("phone") || "—"),
-          "Child's age: " + data.get("child_age"),
-          "Preferred start: " + (data.get("preferred_start") || "—"),
-          "",
-          data.get("message") || "(no extra note)",
-          "",
-          "19886 70 Avenue, Langley, British Columbia",
-        ].join("\n");
-        const href =
-          "mailto:Daycareexpressbc@hotmail.com?subject=" +
-          encodeURIComponent("New inquiry — Day Care Express") +
-          "&body=" +
-          encodeURIComponent(body);
-        document.getElementById("open-mail").setAttribute("href", href);
-        window.location.href = href;
-        event.target.style.display = "none";
-        document.getElementById("ok").style.display = "block";
-      });
-    </script>
   </body>
 </html>
