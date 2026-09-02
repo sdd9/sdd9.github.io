@@ -145,7 +145,15 @@
       .photo { overflow: hidden; border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
       .photo img { display: block; width: 100%; height: auto; }
       .split { display: grid; gap: 28px; align-items: start; margin-top: 28px; }
-      .pill { display: inline-flex; margin-top: 12px; background: var(--surface); color: var(--engine); font-weight: 700; font-size: .9rem; padding: 6px 12px; border-radius: 999px; }
+      .about-wrap { background: var(--surface); border-radius: 36px; padding: 28px; }
+      .about-card { overflow: hidden; border-radius: 28px; box-shadow: var(--shadow); }
+      .about-card .bar { display: block; height: 8px; }
+      .about-card .body { padding: 22px; }
+      .tint-red { background: color-mix(in oklab, var(--rail-red) 16%, #fff); }
+      .tint-yellow { background: color-mix(in oklab, var(--rail-yellow) 22%, #fff); }
+      .tint-blue { background: color-mix(in oklab, var(--rail-blue) 16%, #fff); }
+      .icon-well { width: 48px; height: 48px; border-radius: 16px; background: #fff; display: grid; place-items: center; }
+      .icon-well i { width: 18px; height: 18px; border-radius: 6px; display: block; }
       .ok { display: none; background: var(--surface); border-radius: 18px; padding: 18px; }
       @media (min-width: 720px) {
         .brand small { display: block; }
@@ -304,26 +312,48 @@
       </section>
 
       <section id="about">
-        <p class="kicker">About</p>
-        <h2>A family daycare, on purpose.</h2>
-        <p class="lede">
-          Care happens in a real home in the Township of Langley.
-          Mornings are unhurried. Play is the work of the day. Parents know
-          who is looking after their child — the same familiar faces, every day.
-        </p>
-        <div class="grid-3">
-          <article class="card">
-            <h3>Home, not a hallway</h3>
-            <p>One household, one rhythm. Children settle faster when the room already feels like a home.</p>
-          </article>
-          <article class="card">
-            <h3>Known by name</h3>
-            <p>A small group means we can follow a child’s pace — extra cuddles, extra time at the puzzle, extra outdoor air.</p>
-          </article>
-          <article class="card">
-            <h3>Mixed ages, gently</h3>
-            <p>Infants and preschoolers share the day the way siblings do — younger ones watch, older ones help, everyone belongs.</p>
-          </article>
+        <div class="about-wrap">
+          <div class="rail" aria-hidden="true" style="height:6px;border-radius:99px;overflow:hidden">
+            <span style="background:var(--rail-red)"></span>
+            <span style="background:var(--rail-orange)"></span>
+            <span style="background:var(--rail-yellow)"></span>
+            <span style="background:var(--rail-green)"></span>
+            <span style="background:var(--rail-blue)"></span>
+            <span style="background:var(--rail-violet)"></span>
+          </div>
+          <p class="kicker" style="margin-top:22px">About</p>
+          <h2>A family daycare, on purpose.</h2>
+          <p class="lede">
+            Care happens in a real home in the Township of Langley.
+            Mornings are unhurried. Play is the work of the day. Parents know
+            who is looking after their child — the same familiar faces, every day.
+          </p>
+          <div class="grid-3">
+            <article class="about-card tint-red">
+              <span class="bar" style="background:var(--rail-red)"></span>
+              <div class="body">
+                <div class="icon-well"><i style="background:var(--rail-red)"></i></div>
+                <h3>Home, not a hallway</h3>
+                <p>One household, one rhythm. Children settle faster when the room already feels like a home.</p>
+              </div>
+            </article>
+            <article class="about-card tint-yellow">
+              <span class="bar" style="background:var(--rail-yellow)"></span>
+              <div class="body">
+                <div class="icon-well"><i style="background:var(--rail-orange)"></i></div>
+                <h3>Known by name</h3>
+                <p>A small group means we can follow a child’s pace — extra cuddles, extra time at the puzzle, extra outdoor air.</p>
+              </div>
+            </article>
+            <article class="about-card tint-blue">
+              <span class="bar" style="background:var(--rail-blue)"></span>
+              <div class="body">
+                <div class="icon-well"><i style="background:var(--rail-blue)"></i></div>
+                <h3>Mixed ages, gently</h3>
+                <p>Infants and preschoolers share the day the way siblings do — younger ones watch, older ones help, everyone belongs.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>
