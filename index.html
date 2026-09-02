@@ -142,6 +142,9 @@
       .fees th, .fees td { text-align: left; padding: 18px 28px; border-bottom: 1px solid #eceff2; }
       .fees th { color: var(--muted); font-size: .9rem; }
       .fees td strong { font-family: var(--display); font-size: 1.6rem; }
+      .photo { overflow: hidden; border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
+      .photo img { display: block; width: 100%; height: auto; }
+      .split { display: grid; gap: 28px; align-items: start; margin-top: 28px; }
       .pill { display: inline-flex; margin-top: 12px; background: var(--surface); color: var(--engine); font-weight: 700; font-size: .9rem; padding: 6px 12px; border-radius: 999px; }
       .ok { display: none; background: var(--surface); border-radius: 18px; padding: 18px; }
       @media (min-width: 720px) {
@@ -154,6 +157,7 @@
         .band-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
         .contact-box { grid-template-columns: .9fr 1.1fr; padding: 40px; }
         .two { grid-template-columns: 1fr 1fr; }
+        .split { grid-template-columns: minmax(0, 22rem) 1fr; }
       }
       @media (prefers-reduced-motion: reduce) {
         .train-chug { animation: none; }
@@ -281,18 +285,21 @@
         </div>
       </section>
 
-      </section>
-
       <section>
         <p class="kicker">Why parents choose us</p>
         <h2>A warm, safe, and loving place for your little one.</h2>
         <p class="lede">We believe every child deserves to feel happy, secure, and excited to learn and grow every day.</p>
-        <div class="grid-3">
-          <article class="card"><h3>Licensed & inspected</h3><p>Fully licensed and inspected for your peace of mind.</p></article>
-          <article class="card"><h3>Small group</h3><p>Small group sizes so every child gets personal attention.</p></article>
-          <article class="card"><h3>Play & learning</h3><p>Age-appropriate learning, play, and social activities.</p></article>
-          <article class="card"><h3>A real home</h3><p>Safe, clean, and stimulating space filled with love.</p></article>
-          <article class="card"><h3>Flexible hours</h3><p>Flexible hours to support working families.</p></article>
+        <div class="split">
+          <figure class="photo">
+            <img src="flyer-welcome.jpg" width="1500" height="2235" alt="Day Care Express flyer: licensed family child care, now accepting new enrollments" />
+          </figure>
+          <div class="grid-2">
+            <article class="card"><h3>Licensed & inspected</h3><p>Fully licensed and inspected for your peace of mind.</p></article>
+            <article class="card"><h3>Small group</h3><p>Small group sizes so every child gets personal attention.</p></article>
+            <article class="card"><h3>Play & learning</h3><p>Age-appropriate learning, play, and social activities.</p></article>
+            <article class="card"><h3>A real home</h3><p>Safe, clean, and stimulating space filled with love.</p></article>
+            <article class="card"><h3>Flexible hours</h3><p>Flexible hours to support working families.</p></article>
+          </div>
         </div>
       </section>
 
@@ -354,13 +361,15 @@
         </div>
       </section>
 
-      </section>
-
       <section id="included">
         <p class="kicker">What’s included</p>
         <h2>Clear from the start.</h2>
         <p class="lede">Safe. Loved. Learning. Growing. All aboard for a great day.</p>
-        <div class="grid-2">
+        <div class="split">
+          <figure class="photo">
+            <img src="flyer-included.jpg" width="1500" height="2230" alt="Day Care Express flyer showing what is included in the monthly fee and what parents provide" />
+          </figure>
+          <div class="grid-2">
           <article class="card">
             <h3>In the monthly fee</h3>
             <ul class="list">
@@ -383,6 +392,7 @@
               <li><span class="bag">•</span> Any special dietary requirements</li>
             </ul>
           </article>
+          </div>
         </div>
       </section>
 
@@ -390,16 +400,21 @@
         <p class="kicker">Parent fees</p>
         <h2>CCFRI fees after the automatic reduction.</h2>
         <p class="lede">CCFRI parent fees — over 4 hours · Langley, BC. Automatic CCFRI reduction. Families do not apply.</p>
-        <table class="fees">
-          <thead>
-            <tr><th>Age group</th><th>Parent fee after CCFRI</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>0–18 months</td><td><strong>$581</strong> / month</td></tr>
-            <tr><td>18–36 months</td><td><strong>$537</strong> / month</td></tr>
-            <tr><td>3 years to Kindergarten</td><td><strong>$500</strong> / month</td></tr>
-          </tbody>
-        </table>
+        <div class="split">
+          <figure class="photo">
+            <img src="flyer-fees.jpg" width="1500" height="2230" alt="Day Care Express CCFRI parent fees: $581, $537, and $500 a month by age group" />
+          </figure>
+          <table class="fees">
+            <thead>
+              <tr><th>Age group</th><th>Parent fee after CCFRI</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>0–18 months</td><td><strong>$581</strong> / month</td></tr>
+              <tr><td>18–36 months</td><td><strong>$537</strong> / month</td></tr>
+              <tr><td>3 years to Kindergarten</td><td><strong>$500</strong> / month</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="contact">
