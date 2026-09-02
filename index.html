@@ -417,13 +417,8 @@
           </div>
           <div class="card">
             <h3>Inquire about a space</h3>
-            <p class="muted">Send the form and we’ll get an email at Daycareexpressbc@hotmail.com. We’ll follow up about a visit.</p>
-            <form id="inquiry" action="https://formsubmit.co/Daycareexpressbc@hotmail.com" method="POST" style="margin-top:18px">
-              <input type="hidden" name="_subject" value="New inquiry — Day Care Express" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://daycareexpress.ca/#contact" />
-              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <p class="muted">Fill in the form and tap Send inquiry. Your email app will open a message to Daycareexpressbc@hotmail.com — tap Send and we’ll get it.</p>
+            <form id="inquiry" style="margin-top:18px">
               <div class="two">
                 <label>Your name <input name="name" required autocomplete="name" /></label>
                 <label>Email <input name="email" type="email" required autocomplete="email" /></label>
@@ -437,8 +432,9 @@
               <button class="btn btn-primary" type="submit" id="send-btn">Send inquiry</button>
             </form>
             <div class="ok" id="ok">
-              <strong>Inquiry sent.</strong>
-              <p class="muted">Thank you. A message is on its way to us. We’ll follow up at the email you entered.</p>
+              <strong>Ready to send</strong>
+              <p class="muted">Your email app should open with a message to Daycareexpressbc@hotmail.com. Tap Send and we’ll receive it.</p>
+              <p style="margin-top:14px"><a class="btn btn-primary" id="open-mail" href="mailto:Daycareexpressbc@hotmail.com">Open email app</a></p>
             </div>
           </div>
         </div>
@@ -459,37 +455,31 @@
       · <a href="mailto:Daycareexpressbc@hotmail.com">Daycareexpressbc@hotmail.com</a>
     </footer>
     <script>
-      document.getElementById("inquiry").addEventListener("submit", async (event) => {
+      document.getElementById("inquiry").addEventListener("submit", (event) => {
         event.preventDefault();
-        const form = event.target;
-        const btn = document.getElementById("send-btn");
-        btn.disabled = true;
-        btn.textContent = "Sending…";
-        const data = new FormData(form);
-        const payload = {
-          name: data.get("name"),
-          email: data.get("email"),
-          phone: data.get("phone") || "—",
-          child_age: data.get("child_age"),
-          preferred_start: data.get("preferred_start") || "—",
-          message: data.get("message") || "(no extra note)",
-          _subject: "New inquiry — Day Care Express",
-          _template: "table",
-          _captcha: "false",
-        };
-        try {
-          const res = await fetch("https://formsubmit.co/ajax/Daycareexpressbc@hotmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify(payload),
-          });
-          const json = await res.json();
-          if (!res.ok || json.success === "false" || json.success === false) throw new Error("send failed");
-          form.style.display = "none";
-          document.getElementById("ok").style.display = "block";
-        } catch (e) {
-          form.submit();
-        }
+        const data = new FormData(event.target);
+        const body = [
+          "Inquiry for Day Care Express",
+          "",
+          "Parent / guardian: " + data.get("name"),
+          "Email: " + data.get("email"),
+          "Phone: " + (data.get("phone") || "—"),
+          "Child's age: " + data.get("child_age"),
+          "Preferred start: " + (data.get("preferred_start") || "—"),
+          "",
+          data.get("message") || "(no extra note)",
+          "",
+          "19886 70 Avenue, Langley, British Columbia",
+        ].join("\n");
+        const href =
+          "mailto:Daycareexpressbc@hotmail.com?subject=" +
+          encodeURIComponent("New inquiry — Day Care Express") +
+          "&body=" +
+          encodeURIComponent(body);
+        document.getElementById("open-mail").setAttribute("href", href);
+        window.location.href = href;
+        event.target.style.display = "none";
+        document.getElementById("ok").style.display = "block";
       });
     </script>
   </body>
