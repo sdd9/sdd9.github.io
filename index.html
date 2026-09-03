@@ -75,6 +75,7 @@
       }
       nav.mobile a { white-space: nowrap; }
       .tab-red { background: var(--rail-red); color: #fff; }
+      .tab-orange { background: var(--rail-orange); color: var(--fg); }
       .tab-yellow { background: var(--rail-yellow); color: var(--fg); }
       .tab-green { background: var(--rail-green); color: var(--fg); }
       .tab-blue { background: var(--rail-blue); color: #fff; }
@@ -150,6 +151,26 @@
       .photo { overflow: hidden; border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
       .photo img { display: block; width: 100%; height: auto; }
       .photo-lg { max-width: 48rem; margin: 28px auto 0; }
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 28px;
+        padding: 0;
+        list-style: none;
+      }
+      .gallery li {
+        overflow: hidden;
+        border-radius: 24px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .gallery img {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
       .title-row { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
       .title-row img { width: 112px; height: 112px; object-fit: contain; }
       .brand img { width: 48px; height: 48px; object-fit: contain; }
@@ -170,10 +191,15 @@
         .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
         .grid-3 { grid-template-columns: repeat(3, 1fr); }
         .grid-2 { grid-template-columns: 1fr 1fr; }
+        .gallery { grid-template-columns: 1fr 1fr; }
+        .gallery img { height: 240px; }
         .band-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
         .contact-box { grid-template-columns: .9fr 1.1fr; padding: 40px; }
         .two { grid-template-columns: 1fr 1fr; }
         .split { grid-template-columns: minmax(0, 22rem) 1fr; }
+      }
+      @media (min-width: 960px) {
+        .gallery { grid-template-columns: 1fr 1fr 1fr; }
       }
       @media (prefers-reduced-motion: reduce) {
         .train-chug { animation: none; }
@@ -201,6 +227,7 @@
         </a>
         <nav class="desktop" aria-label="Page">
           <a class="tab-red" href="#about">About</a>
+          <a class="tab-orange" href="#photos">Photos</a>
           <a class="tab-yellow" href="#included">Included</a>
           <a class="tab-green" href="#fees">Fees</a>
           <a class="tab-blue" href="#contact">Contact</a>
@@ -209,6 +236,7 @@
       </div>
       <nav class="mobile" aria-label="Page (mobile)">
         <a class="tab-red" href="#about">About</a>
+        <a class="tab-orange" href="#photos">Photos</a>
         <a class="tab-yellow" href="#included">Included</a>
         <a class="tab-green" href="#fees">Fees</a>
         <a class="tab-blue" href="#contact">Contact</a>
@@ -338,6 +366,31 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section id="photos">
+        <p class="kicker">Photos</p>
+        <h2>Our play space.</h2>
+        <p class="lede">A look inside Day Care Express — play mats, trains, stories, and a child-size table in a real home.</p>
+        <ul class="gallery">
+          <li><img src="gallery/gallery-01.jpg" width="1500" height="1125" alt="Playroom with alphabet mats, child-size table, toy kitchen, and ride-on car" /></li>
+          <li><img src="gallery/gallery-02.jpg" width="1500" height="1125" alt="Playroom with table, alphabet mats, toy kitchen, and train wall mural" /></li>
+          <li><img src="gallery/gallery-03.jpg" width="1500" height="1125" alt="Child-size table and chairs facing the play mats" loading="lazy" /></li>
+          <li><img src="gallery/gallery-04.jpg" width="1500" height="1125" alt="Four child chairs around a small table" loading="lazy" /></li>
+          <li><img src="gallery/gallery-05.jpg" width="1500" height="1125" alt="Playroom looking toward the entry and reading corner" loading="lazy" /></li>
+          <li><img src="gallery/gallery-06.jpg" width="1500" height="1125" alt="Ride-on car, fire station toys, and a kindness train wall mural" loading="lazy" /></li>
+          <li><img src="gallery/gallery-07.jpg" width="1500" height="1125" alt="Toy bins, red play kitchen, and activity cube" loading="lazy" /></li>
+          <li><img src="gallery/gallery-08.jpg" width="1500" height="1125" alt="Red play kitchen, food toys, and colourful storage bins" loading="lazy" /></li>
+          <li><img src="gallery/gallery-09.jpg" width="1500" height="1125" alt="Toy bins beside a marble run and play kitchen" loading="lazy" /></li>
+          <li><img src="gallery/gallery-10.jpg" width="1500" height="1125" alt="Play corner with activity cube, building blocks, and fire trucks" loading="lazy" /></li>
+          <li><img src="gallery/gallery-11.jpg" width="1500" height="1125" alt="Reading helps your mind bloom rainbow wall mural" loading="lazy" /></li>
+          <li><img src="gallery/gallery-12.jpg" width="1500" height="1125" alt="Reading mural above alphabet play mats" loading="lazy" /></li>
+          <li><img src="gallery/gallery-13.jpg" width="1500" height="1125" alt="Alphabet mats, toy train track, keyboard, and bookshelf" loading="lazy" /></li>
+          <li><img src="gallery/gallery-14.jpg" width="1500" height="1125" alt="Toy train on a figure-eight track beside alphabet mats" loading="lazy" /></li>
+          <li><img src="gallery/gallery-15.jpg" width="1500" height="1125" alt="Close-up of the toy steam train and track" loading="lazy" /></li>
+          <li><img src="gallery/gallery-16.jpg" width="1500" height="1125" alt="Keyboard by the window in the playroom" loading="lazy" /></li>
+          <li><img src="gallery/gallery-17.jpg" width="1500" height="1125" alt="Playroom looking toward the living area, high chair, and fireplace" loading="lazy" /></li>
+        </ul>
       </section>
     </main>
 
