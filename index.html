@@ -151,6 +151,19 @@
       .photo { overflow: hidden; border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
       .photo img { display: block; width: 100%; height: auto; }
       .photo-lg { max-width: 48rem; margin: 28px auto 0; }
+      .photo-fees {
+        max-width: 48rem;
+        margin: 28px auto 0;
+        padding: 6px;
+        background: linear-gradient(90deg, var(--rail-red), var(--rail-orange), var(--rail-yellow), var(--rail-green), var(--rail-blue), var(--rail-violet));
+        box-shadow: none;
+      }
+      .photo-fees .rail { display: none; }
+      .photo-fees img {
+        margin-top: 0;
+        border-radius: 26px;
+        outline: none;
+      }
       .gallery {
         display: grid;
         grid-template-columns: 1fr;
@@ -432,7 +445,15 @@
       <section id="fees">
         <p class="kicker">Parent fees</p>
         <h2>CCFRI parent fees</h2>
-        <figure class="photo photo-lg">
+        <figure class="photo photo-fees">
+          <div class="rail" aria-hidden="true">
+            <span style="background:var(--rail-red)"></span>
+            <span style="background:var(--rail-orange)"></span>
+            <span style="background:var(--rail-yellow)"></span>
+            <span style="background:var(--rail-green)"></span>
+            <span style="background:var(--rail-blue)"></span>
+            <span style="background:var(--rail-violet)"></span>
+          </div>
           <img src="flyer-fees.jpg" width="1500" height="2230" alt="Day Care Express CCFRI parent fees, 7:30 a.m. to 5:30 p.m. in Langley, BC: $581 for 0–18 months, $537 for 18–36 months, and $500 for 3 years to kindergarten. Automatic CCFRI reduction. Families do not apply." />
         </figure>
       </section>
